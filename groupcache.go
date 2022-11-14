@@ -165,7 +165,7 @@ type Group struct {
 	// loadGroup ensures that each key is only fetched once
 	// (either locally or remotely), regardless of the number of
 	// concurrent callers.
-	loadGroup flightGroup
+	loadGroup flightGroup //保证对相同key的并发读取请求只被执行一次
 
 	_ int32 // force Stats to be 8-byte aligned on 32-bit platforms
 

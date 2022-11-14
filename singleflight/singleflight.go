@@ -29,7 +29,7 @@ type call struct {
 
 // Group represents a class of work and forms a namespace in which
 // units of work can be executed with duplicate suppression.
-type Group struct {
+type Group struct { //和标准库的singleflight实现一致
 	mu sync.Mutex       // protects m
 	m  map[string]*call // lazily initialized
 }
